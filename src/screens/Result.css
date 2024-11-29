@@ -1,0 +1,205 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('/public/fonts/Poppins-Regular.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+    overflow-x: hidden;
+}
+
+/* Fixed header styling */
+header {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    background-color: #003300;
+    color: white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Breadcrumb Styling */
+h3.breadcrumb {
+    position: fixed;
+    top: 90px;
+    left: 40px;
+    font-size: 17px;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    z-index: 100;
+    font-weight: 60;
+    font-family: 'Poppins';
+    white-space: nowrap;
+    display: inline;
+    background: transparent;
+    width: auto;
+}
+h3.breadcrumb .highlight {
+    color: #FFFFFF; /* Change this color to whatever you want for "Result" */
+    font-weight: bold;
+    font-family: 'Poppins';
+    font-size: 17px; /* Optional: Make it bold to emphasize */
+}
+
+/* Red line and text */
+.line-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 20px;
+    top: -30px;
+    position: relative;
+}
+
+.line {
+    height: 2px;
+    width: 10%;
+    background-color: rgb(182, 99, 99);
+    position: relative;
+    top: -40px;
+}
+
+.line::after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: -10px;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(182, 99, 99);
+    border-radius: 50%;
+}
+
+.estimate-text {
+    font-family: 'Poppins';
+    font-size: 2rem;
+    font-weight: 100;
+    color: rgb(248, 248, 248);
+    margin-left: 30px;
+    margin-top: -80px;
+}
+
+/* Result container */
+.result-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw;
+    height: 100vh; /* Make sure it takes full height */
+    padding-top: 90px; /* Account for fixed header */
+    background: linear-gradient(to right, #1a1a1a, #004d00);
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* Left content */
+.result-content {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+/* Circular progress */
+.circular-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px; /* To ensure it's centered in the container */
+}
+
+.progress-circle-outer {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: conic-gradient(
+      #5BD489 0% 64%,  /* The dark green color from 0% to 64% */
+      #b2e4a8 64% 100% /* Lighter green for the remaining part (from 64% to 100%) */
+    ); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-circle-inner {
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: #032706; /* Dark Green background for inner circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.percentage {
+    font-size: 50px;
+    font-weight: bold;
+    color:  #FFFFFF;
+    font-family: 'Poppins';
+}
+
+.circular-progress p {
+    font-size: 19px;
+    margin-top: 15px; /* Adjust space between the circle and text */
+    color: #FFFFFF; 
+    font-family: 'Poppins';
+}
+
+/* Right image section */
+.result-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Align the image to the bottom */
+    width: 100%; /* Ensure it spans the full width */
+    height: 100%; /* Make sure it takes full height of the container */
+}
+
+.result-image img {
+    width: 100%; /* Fill width of container */
+    height: 100%; /* Fill height of container */
+    object-fit: cover; /* Ensure aspect ratio is maintained */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .result-container {
+        flex-direction: column;
+        padding-top: 120px;
+    }
+
+    .result-content, .result-image {
+        width: 100%;
+    }
+
+    .progress-circle-outer {
+        width: 200px;
+        height: 200px;
+        top: 150px; /* Adjust for mobile view */
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .progress-circle-inner {
+        width: 120px;
+        height: 120px;
+    }
+
+    .percentage {
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,296 @@
+@font-face {
+  font-family: 'Poppins';
+  src: url('/public/fonts/Poppins-Regular.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* Global Font Settings */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content to the top */
+  overflow: hidden; 
+}
+
+
+h3.breadcrumb {
+  position: fixed;
+  top: 80px; /* Adjusted position */
+  left: 20px;
+  font-size: 15px;
+  color: #1E231E; 
+  margin: 0;
+  padding: 10px 15px; 
+  z-index: 1000; 
+  width: auto; 
+  font-weight: 100;
+  font-family: 'Poppins';
+
+  
+}
+
+/* Style for the bold and colored text */
+h3.breadcrumb .highlight {
+  font-weight: bold;
+  color: #131212; 
+  font-size: 17px; 
+  font-family: 'Poppins';
+}
+
+
+.input-screen {
+  margin-top: 140px; /* Create space for both fixed header and breadcrumb */
+  padding: 15px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px; 
+  height: 100vh;
+  overflow: hidden; }
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 35px; 
+  margin-bottom: 20px;
+}
+form .form-group-headers{
+  font-size: 34px; 
+  font-weight: 800; 
+  font-family: 'Poppins';
+  color: #1f1d1d;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px; 
+}
+
+
+.form-group label {
+  font-size: 18px; 
+  font-weight: bold;
+  color: #1f1d1d;
+  margin-bottom: 10px; 
+  font-family: 'Poppins';
+}
+
+
+.procedures-group {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 30px; 
+  justify-content: space-evenly; 
+  width: 100%; 
+}
+
+/* Each question block (ICSI Procedure or PGT Testing) */
+.procedure {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; 
+  gap: 15px; 
+  width: calc(50% - 20px); 
+}
+
+
+.procedure strong {
+  margin-right: 10px; 
+}
+
+/* Radio Buttons */
+.radio-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; 
+  flex-wrap: wrap; 
+  width: 100%;
+}
+
+.radio-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: normal; /* Default non-bold text */
+}
+
+.radio-container input[type='radio'] {
+  display: none;
+}
+
+
+.radio-container .custom-radio {
+  width: 16px; 
+  height: 16px; 
+  border: 2px solid #E63946;
+  border-radius: 50%;
+  position: relative;
+}
+
+/* When selected, make the radio label bold */
+.radio-container input[type='radio']:checked + .custom-radio {
+  font-weight: bold;
+}
+
+.radio-container input[type='radio']:checked + .custom-radio::after {
+  content: '';
+  width: 8px; /* Adjusted for smaller custom-radio */
+  height: 8px;
+  background-color: #E63946;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px; /* Adjusted for smaller size */
+  left: 4px;
+}
+
+/* Adjust layout for radio buttons */
+.radio-buttons .radio-container:nth-child(4),
+.radio-buttons .radio-container:nth-child(5),
+.radio-buttons .radio-container:nth-child(6) {
+  margin-top: 10px; /* Push the second line of radio buttons down */
+}
+.radio-buttons {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 15px; /* Space between radio buttons */
+  justify-content: center; /* Center the buttons */
+}
+
+.radio-buttons .radio-container {
+  width: calc(33.33% - 10px); 
+  text-align: center; 
+}
+
+.slider-container {
+  position: relative;
+  width: 300px; 
+  margin: 0 auto;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(
+    to right,
+    #E63946 var(--slider-percentage),
+    lightgrey var(--slider-percentage)
+  );
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #e63946;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.slider:focus {
+  background: #E63946;
+}
+
+.slider-popup {
+  position: absolute;
+  top: -30px;
+  background-color: #E63946;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-top: 5px;
+  font-family: 'Poppins';
+  width: 300px; /* Matches slider width */
+}
+
+/* Checkboxes */
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px; /* Reduced gap between checkboxes */
+  justify-content: center;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduced gap */
+  font-size: 14px;
+  font-family: 'Poppins';
+}
+
+.checkbox-container input[type='checkbox'] {
+  display: none; 
+}
+
+.checkbox-container .custom-checkbox {
+  width: 16px; /* Set size of the checkbox */
+  height: 16px; 
+  border: 2px solid #E63946; 
+  position: relative;
+  background-color: white; 
+  border-radius: 4px; 
+}
+
+/* Show the red fill and white checkmark when checked */
+.checkbox-container input[type='checkbox']:checked + .custom-checkbox {
+  background-color: #E63946; 
+  border-color: #E63946; 
+}
+
+/* Center the white checkmark inside the red-filled checkbox */
+.checkbox-container input[type='checkbox']:checked + .custom-checkbox::before {
+  content: '\2713'; 
+  font-size: 12px; 
+  color: white; 
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  font-weight: bold; 
+}
+
+
+/* Calculate Button */
+button {
+  padding: 10px 20px; /* Adjusted padding */
+  background-color: #E63946;
+  color: white;
+  border: none;
+  border-radius: 8px; 
+  cursor: pointer;
+  font-size: 16px;
+  width: max-content; 
+  margin: 0 auto; 
+  display: block; 
+}
+
+button:hover {
+  background-color: #c92c3d;
+}
